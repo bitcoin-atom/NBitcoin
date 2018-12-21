@@ -765,6 +765,37 @@
 			};
 		}
 
+		public class BitcoinAtomDownloadData
+		{
+			public NodeDownloadData v0_16_2 = new NodeDownloadData
+			{
+				Version = "0.16.2",
+
+				Windows = new NodeOSDownloadData
+				{
+					DownloadLink = "https://github.com/bitcoin-atom/bitcoin-atom/releases/download/v{0}/atom-{0}-win64.zip",
+					Archive = "atom-{0}-win64.zip",
+					Executable = "atom-{0}/bin/atomd.exe",
+					Hash = "063108e09f8cc07e6773a93ceefea156046a1cedfa886ec94b37b8feaf946437"
+				},
+
+				Linux = new NodeOSDownloadData
+				{
+					DownloadLink = "https://github.com/bitcoin-atom/bitcoin-atom/releases/download/v{0}/atom-{0}-x86_64-linux-gnu.tar.gz",
+					Archive = "atom-{0}-x86_64-linux-gnu.tar.gz",
+					Executable = "atom-{0}/bin/atomd",
+					Hash = "5f5d4d8339dc868f1be733c08782a8e2b69cc0ca37f923e0de49cce1df6c33af"
+				},
+
+				Mac = new NodeOSDownloadData
+				{
+					DownloadLink = "https://github.com/bitcoin-atom/bitcoin-atom/releases/download/v{0}/atom-{0}-osx64.tar.gz",
+					Archive = "atom-{0}-osx64.tar.gz",
+					Executable = "atom-{0}/bin/atomd",
+					Hash = "691ec877491af5f2164c89a049f8518c98d3ea180a9961aa1eefcca66fedeb60"
+				}
+			};
+		}
 
 
 		public static GoByteNodeDownloadData GoByte
@@ -871,6 +902,11 @@
 			get; set;
 		} = new GincoinNodeDownloadData();
 
+		public static BitcoinAtomDownloadData BitcoinAtom
+		{
+			get; set;
+		} = new BitcoinAtomDownloadData();
+		
 		public bool UseSectionInConfigFile { get; private set; }
 		public string AdditionalRegtestConfig { get; private set; }
 	}
